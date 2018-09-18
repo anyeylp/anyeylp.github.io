@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>iOS设置navigationbar透明 | Anyeylp&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="项目的UI设计有一种，主页导航栏是透明的，但是push到的第二个导航栏是显示的这种情况，为此我在网上找了一下解决的方法，在此将方法总结在自己的备博客中，以防以后自己忘记。 在第一个控制器的viewWillAppear里面写下以下代码 (`) [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] in">
+  <meta name="description" content="项目的UI设计有一种，主页导航栏是透明的，但是push到的第二个导航栏是显示的这种情况，为此我在网上找了一下解决的方法，在此将方法总结在自己的备博客中，以防以后自己忘记。 在第一个控制器的viewWillAppear里面写下以下代码 123[self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] ini">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS设置navigationbar透明">
 <meta property="og:url" content="http://yoursite.com/2018/09/18/iOS-navigationbar-clear/index.html">
 <meta property="og:site_name" content="Anyeylp&#39;s blog">
-<meta property="og:description" content="项目的UI设计有一种，主页导航栏是透明的，但是push到的第二个导航栏是显示的这种情况，为此我在网上找了一下解决的方法，在此将方法总结在自己的备博客中，以防以后自己忘记。 在第一个控制器的viewWillAppear里面写下以下代码 (`) [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] in">
+<meta property="og:description" content="项目的UI设计有一种，主页导航栏是透明的，但是push到的第二个导航栏是显示的这种情况，为此我在网上找了一下解决的方法，在此将方法总结在自己的备博客中，以防以后自己忘记。 在第一个控制器的viewWillAppear里面写下以下代码 123[self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] ini">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-18T06:46:21.000Z">
+<meta property="og:updated_time" content="2018-09-18T06:55:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS设置navigationbar透明">
-<meta name="twitter:description" content="项目的UI设计有一种，主页导航栏是透明的，但是push到的第二个导航栏是显示的这种情况，为此我在网上找了一下解决的方法，在此将方法总结在自己的备博客中，以防以后自己忘记。 在第一个控制器的viewWillAppear里面写下以下代码 (`) [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] in">
+<meta name="twitter:description" content="项目的UI设计有一种，主页导航栏是透明的，但是push到的第二个导航栏是显示的这种情况，为此我在网上找了一下解决的方法，在此将方法总结在自己的备博客中，以防以后自己忘记。 在第一个控制器的viewWillAppear里面写下以下代码 123[self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] ini">
   
     <link rel="alternative" href="/atom.xml" title="Anyeylp&#39;s blog" type="application/atom+xml">
   
@@ -172,15 +172,9 @@
       
         <p>项目的UI设计有一种，主页导航栏是透明的，但是push到的第二个导航栏是显示的这种情况，为此我在网上找了一下解决的方法，在此将方法总结在自己的备博客中，以防以后自己忘记。</p>
 <p>在第一个控制器的viewWillAppear里面写下以下代码</p>
-<p>(<code>`</code>)</p>
-<pre><code>[self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
-[self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
-</code></pre><p>(<code>`</code>)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">[self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];</span><br><span class="line">[self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];</span><br></pre></td></tr></table></figure>
 <p>在第一个控制器的viewWillDisappear写下以下代码</p>
-<p>(<code>`</code>)</p>
-<pre><code>[self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
-[self.navigationController.navigationBar setShadowImage:nil];
-</code></pre><p>(<code>`</code>)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">[self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];</span><br><span class="line">[self.navigationController.navigationBar setShadowImage:nil];</span><br></pre></td></tr></table></figure>
 <p>第二个控制器的返回按钮必须是自定义的才行，验证过不是自定义按钮的会闪现一下，emmmm具体为啥我没有深究，只知道系统的返回按钮那么丑，一般app都会自定义返回按钮吧😂 感觉这个很简单，所以就不传demo了</p>
 
       
